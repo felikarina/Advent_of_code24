@@ -20,12 +20,26 @@ line1 = line1.sort()
 line2 = line2.sort()
 
 let distance = 0
-function addition() {
+function addition(){
     for(let x = 0; x<line1.length; x++){
-        distance = distance+(Math.abs(line1[x]-line2[x]))
+        distance += (Math.abs(line1[x]-line2[x]))
     }
     return distance
 }
 
 //PART TWO
 
+function multiplication(){
+    let result = 0
+    let count = 0
+    for(let y = 0; y<line1.length; y++){
+        for(let z = 0; z<line2.length; z++){
+            if(line1[y]===line2[z]){
+                count++
+            }
+        }
+        result += line1[y]*count
+        count = 0
+    }
+    return result
+}
